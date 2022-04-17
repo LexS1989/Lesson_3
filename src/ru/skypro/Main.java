@@ -88,6 +88,52 @@ public class Main {
             }
         }
 
+//        Задача №6
+        {
+            int age = 19;
+            int salary = 58_000;
+            double creditLimit = 0;
+            if (age <= 23) {
+                creditLimit = salary * 2;
+            } else {
+                creditLimit = salary * 3;
+            }
+            if (salary >= 80_000) {
+                creditLimit = creditLimit * 1.5;
+            } else if (salary >= 50_000) {
+                creditLimit = creditLimit * 1.2;
+            }
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом = " + creditLimit + " рублей");
+        }
+
+//        Задача №7
+        {
+            int age = 25;
+            int salary = 60_000;
+            int wantedSum = 330_000;
+            double percent = 10; // %
+            int creditTerm = 12;
+            int maxPayment = salary / 2;
+            if (age < 25) {
+                percent = percent * 1.1;
+            } else if (age < 30) {
+                percent = percent * 1.05;
+            }
+            if (salary > 80_000) {
+                percent = percent / 1.07;
+            }
+            double paymentMonth = (wantedSum + (wantedSum * (percent / 100))) / creditTerm;
+//            System.out.println("percent = " + percent + " %");
+//            System.out.println("maxPayment = " + maxPayment);
+//            System.out.println("paymentMonth = " + paymentMonth);
+            System.out.print("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. " +
+                    "Платеж по кредиту " + paymentMonth + " рублей.");
+            if ((maxPayment) >= paymentMonth) {
+                System.out.println(" Одобрено.");
+            } else {
+                System.out.println(" Отказано.");
+            }
+        }
 
         }
     }
